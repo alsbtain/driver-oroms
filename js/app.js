@@ -31,8 +31,15 @@ function loadScript(){
 }  
 
   
-
+checkConnection();
 console.log();
+    function checkConnection() {
+		if (navigator.connection.type == Connection.NONE){
+		
+	alert("No Internet");
+		} else {
+		
+
 
 $usersession = {
 
@@ -96,10 +103,10 @@ $usersession = {
         	});
         	
         	
+      }  	
         	
         	
-        	
-        	
+    }    	
         	
             
 ////////////////////////////////////////////////////////////////////
