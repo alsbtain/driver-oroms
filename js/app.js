@@ -42,7 +42,18 @@ $usersession = {
 	
 };
 
-            
+
+  function checkConnection() {
+		if (navigator.onLine){
+		
+	alert("Internet");
+		} else {
+		
+	alert("noInternet");
+
+}
+}
+   checkConnection();         
 
 			function loadorders(){
         	
