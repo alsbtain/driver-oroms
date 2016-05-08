@@ -21,7 +21,6 @@
   </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKV6Msc9mojX1uPNR9evM2GsP8TDA5q9U"></script>
   <link rel="shortcut icon" type="image/x-icon" href="images/webclip-gallio.png">
-  <link rel="apple-touch-icon" href="images/ 256لـوقو veto.png">
   <style type="text/css">
     @media screen and (min-width: 100%) {
       .w-container {
@@ -43,11 +42,11 @@
         checkConnection();
         alert("here");
     }
-
+alert("hh");
   function checkConnection() {
-		if (navigator.connection.type == Connection.NONE){
+		if (navigator.onLine){
 		
-	alert("No Internet");
+	alert("Internet");
 		} else {
 		
 	alert("Internet");
