@@ -34,22 +34,17 @@
 
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
+  
     // device APIs are available
     //
-    function onDeviceReady() {
-        checkConnection();
-        alert("here");
-    }
-alert("hh");
+checkConnection();
   function checkConnection() {
 		if (navigator.onLine){
 		
 	alert("Internet");
 		} else {
 		
-	alert("Internet");
+	alert("noInternet");
 
 }
 }
