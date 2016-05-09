@@ -90,7 +90,7 @@ function calcRoute() {
 }
     },function error(msg){alert('Please enable your GPS position future.');  
 
-  }, {maximumAge:600000, timeout:5000, enableHighAccuracy: false});
+  }, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
 
 }else {
     alert("Geolocation API is not supported in your browser.");
