@@ -1,4 +1,3 @@
-
        var latitude=0;
        var longitude=0;
        	
@@ -13,6 +12,7 @@
 	}
 	
 	function setlog (logn) {
+		 dslon =logn;
 	  
 	}
 	
@@ -23,8 +23,8 @@
     navigator.geolocation.getCurrentPosition(function(position){
 
     var map;
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
     var accuracy = position.coords.accuracy;
     var coords = new google.maps.LatLng(latitude, longitude);
     var mapOptions = {
@@ -54,11 +54,11 @@
   		});
 
  		 // Set destination, origin and travel mode.
- 		 var chicago = {lat: latitude, lng: longitude};
- 		 var indianapolis = {lat: dslan, lng: dslon};
+ 		 var from = {lat:position.coords.latitude, lng:longitude = position.coords.longitude};
+ 		 var to = {lat: dslan, lng: dslon};
  		 var request = {
-  		  destination: indianapolis,
-   		  origin: chicago,
+  		  destination: to,
+   		  origin: from,
    		  travelMode: google.maps.TravelMode.DRIVING
   		};
 
@@ -90,7 +90,7 @@ function calcRoute() {
 }
     },function error(msg){alert('Please enable your GPS position future.');  
 
-  }, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
+  }, {maximumAge:600000, timeout:5000, enableHighAccuracy: false});
 
 }else {
     alert("Geolocation API is not supported in your browser.");

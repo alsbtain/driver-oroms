@@ -43,17 +43,13 @@ $usersession = {
 };
 
 
-  function checkConnection() {
-		if (navigator.onLine){
-		
-	alert("Internet");
-		} else {
-		
-	alert("noInternet");
 
+if (navigator.onLine==true) {
+	var x= "is ?"+navigator.onLine;
+  console.log('online'+x);
+} if(navigator.onLine==false) {
+  console.log('offline');
 }
-}
-   checkConnection();         
 
 			function loadorders(){
         	
