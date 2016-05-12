@@ -1175,7 +1175,7 @@
 	    var status = null;
 
 	    if (type === 'password') {
-	      status = 'Passwords cannot be submitted.';
+	     // status = 'Passwords cannot be submitted.';
 	    } else if (field.attr('required')) {
 	      if (!value) {
 	        status = 'Please fill out the required field: ' + name;
