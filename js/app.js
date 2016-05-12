@@ -109,6 +109,7 @@ if(isemployee==4){
         	var s=5;
         	server.request({route:{app:'queryString',s:s,id:id}}).done(function(data){ 
         		      	 	      	 	 notificationcorrect("Delivered =)");
+                alert("hhhhhh");
 				loadorders();
         	});
 
