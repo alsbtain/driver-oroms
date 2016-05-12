@@ -21,6 +21,7 @@
   </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKV6Msc9mojX1uPNR9evM2GsP8TDA5q9U"></script>
   <link rel="shortcut icon" type="image/x-icon" href="images/webclip-gallio.png">
+  <link rel="apple-touch-icon" href="images/ 256لـوقو veto.png">
   <style type="text/css">
     @media screen and (min-width: 100%) {
       .w-container {
@@ -28,7 +29,11 @@
       }
     }
   </style>
-     	
+            <style>
+      ul li { list-style-image: url('images/dot.png') }
+      .loaddiv {display: block;}
+    </style>
+  	
 <script  id="orders"  type="text/x-handlebars-template" > 
     	
     	{{#each order}}
@@ -84,6 +89,13 @@
 </script>  
 </head>
 <body class="_5body">
+<a id="notificationblue" style="display: none" data-ix="notification-bar-2"></a>
+	<a id="notificationred" style="display: none" data-ix="notification-bar"></a>
+	 <div id="errorCode" class="notification-div">
+  </div>
+  <div id="successCode" class="notification-div-2">
+
+  </div>
 
   <div class="w-section _4section">
     <a href="#" class="w-inline-block logout-div"><img width="118" src="images/log out.png" class="logout-image">

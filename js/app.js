@@ -22,18 +22,38 @@
 
        
        };
-       
-function loadScript(){
+       	var isemployee  = localStorage.getItem("isemployee");
+
+				var login  = localStorage.getItem("login");
+				console.log(isemployee)
+
+      function loadScript(){
 	
 		    var top = $("#scripts");
-            top.html(" <script src='./js/jQuery.2.1.js'></script> "+"<script src='./js/webflow.js'></script> ");
+            top.html(" <script src='./js/jQuery.2.1.js'></script> "+"<script src='./js/webflow.js'></script>"+"<script>$(window).load(function(){$('.loaddiv').fadeOut();});</script>");
 
-}  
+}
+      
+      function notificationcorrect(strblue){
+	
+		    var top = $("#notificationblue");
+		    var top1=$("#successCode");
+		    top1.html("<h3 class='notification-text'>"+strblue+"</h3>");
+            top.click();
 
+}
+      function notificationincorrect(strred){
+	
+		    var top = $("#notificationred");
+		    var top1=$("#errorCode");
+		    top1.html("<h3 class='notification-text'>"+strred+"</h3>");
+            top.click();
+
+}
   
 
 console.log();
-   
+
 $usersession = {
 
 
@@ -42,14 +62,7 @@ $usersession = {
 	
 };
 
-
-
-if (navigator.onLine==true) {
-	var x= "is ?"+navigator.onLine;
-  console.log('online'+x);
-} if(navigator.onLine==false) {
-  console.log('offline');
-}
+                 
 
 			function loadorders(){
         	
@@ -65,6 +78,17 @@ if (navigator.onLine==true) {
   			
   			});}
         	
+if(login=="false"){
+          	window.location.assign("http://sbta.in/websites/oroms/login-emp/index.html");
+
+
+
+}if(login=="true"){
+if(isemployee==4){
+      	 	      	 	 notificationcorrect("Hello Back");
+
+
+
         	loadorders();
         	
           $("body").delegate("#Picked","click",function(){
@@ -84,7 +108,7 @@ if (navigator.onLine==true) {
 
         	var s=5;
         	server.request({route:{app:'queryString',s:s,id:id}}).done(function(data){ 
-        		
+        		      	 	      	 	 notificationcorrect("Delivered =)");
 				loadorders();
         	});
 
@@ -103,10 +127,21 @@ if (navigator.onLine==true) {
         	});
         	
         	
-      
+  $("body").delegate(".logout-div","click", function(){
+	localStorage.setItem("login",false);
+	localStorage.removeItem("loginID");
+
+	localStorage.removeItem("isemployee");
+	window.location.assign("http://sbta.in/websites/oroms/login-emp/index.html");
+});      	
+        	
+}else{
+$("._5body").html("");
+
+}
+}        	
         	
         	
-    
             
 ////////////////////////////////////////////////////////////////////
 
