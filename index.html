@@ -20,14 +20,14 @@
     });
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="images/webclip-gallio.png">
-  <link rel="apple-touch-icon" href="images/ 256لـوقو veto.png">
   <style type="text/css">
     @media screen and (min-width: 100%) {
       .w-container {
         max-width: 100%;
       }
     }
+            .loaddiv {display: block;}
+
   </style>
   	
 <script id="Home" type="text/x-handlebars-template">
@@ -51,6 +51,9 @@
 
 </head>
 <body class="_5body">
+      <div class="loaddiv splash-page"><img width="119" src="images/Oroms.png" class="logo-icon">
+  </div>
+
 			<div id="htmlWrapper">
 			
 		</div>
@@ -195,6 +198,11 @@ $("body").delegate("#logout-text","click", function(){
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="js/webflow.js"></script>
+      <script>
+    $(window).load(function(){
+      		$('.loaddiv').fadeOut(4000);
+      });
+  </script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 
