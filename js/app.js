@@ -132,7 +132,7 @@ if(isemployee==4){
 	localStorage.removeItem("loginID");
 
 	localStorage.removeItem("isemployee");
-	window.location.assign("http://sbta.in/websites/oroms/login-emp/index.html");
+	window.location="./index.html";
 });      	
         	
 }else{
