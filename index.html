@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Sat Apr 30 2016 16:22:29 GMT+0000 (UTC) -->
-<html data-wf-site="56d587fe50c7138426183b80" data-wf-page="57223632bc894a0c22a6c563" lang="ar">
+<!-- Last Published: Mon May 02 2016 20:54:27 GMT+0000 (UTC) -->
+<html data-wf-site="56d587fe50c7138426183b80" data-wf-page="5721e369288e84d00ffb3596" lang="ar">
 <head>
   <meta charset="utf-8">
-  <title>Driver page</title>
-  <meta property="og:title" content="Driver page">
+  <title>Login Page</title>
+  <meta property="og:title" content="Login Page">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -19,7 +19,7 @@
       }
     });
   </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKV6Msc9mojX1uPNR9evM2GsP8TDA5q9U"></script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="images/webclip-gallio.png">
   <link rel="apple-touch-icon" href="images/ 256لـوقو veto.png">
   <style type="text/css">
@@ -29,112 +29,176 @@
       }
     }
   </style>
-            <style>
-      ul li { list-style-image: url('images/dot.png') }
-      .loaddiv {display: block;}
-    </style>
   	
-<script  id="orders"  type="text/x-handlebars-template" > 
-    	
-    	{{#each order}}
-    	
-           <div class="_6single-item nohover">
-             <div data-ix="overdiv-hide" class="overdiv for-driver">
-             <a id="Picked" data-id="{{OrderID}}" href="#" class="w-button _6donebutt fordiver">Picked-up</a>
-             <a id="loadmap" data-log="{{logn}}" data-lan="{{lan}}"  href="#" data-ix="driver-map" class="w-button _6donebutt fordiver">Map</a>
-             <a id="Delivered" data-id="{{OrderID}}" href="#" class="w-button _6donebutt fordriver">Delivered</a>
-             <a href="#" data-ix="overdiv-hide-2" class="w-button _6donebutt _6ordercancel fordriver">Cancel</a>
-              </div>
-              <a href="#" data-ix="overdiv-appear" class="w-inline-block _6single-item">
-                <div data-ix="overdiv-appear" class="the-receipt-information for-chef-orders">
-                  <div class="receipt-date-and-time-div chef-rnumber">
-                    <h1 class="receipt-text fordrivere">Order #:</h1>
-                    <h1 class="receipt-number fordrivere">{{OrderID}}</h1>
-                  </div>
-                  <h1 class="driverordername">{{fname}}</h1>
-                  <h1 class="driverordername">{{phoneNum}}</h1>
-                  <div class="total-div total manordertotal">
-                    <h1 class="subtotal total manorder">Total</h1>
-                    <h1 class="subtotal-atr total receipage manorder">{{totalPrice}}</h1>
-                  </div> 
-                  <div class="state-div for-state"><img src="images/confirm icon.png" class="state-image">
-                    <h1 class="state-text">{{Name}}</h1>
-                  </div>
-                </div>
-              </a>
-            </div>
- 
-  {{/each}}
+<script id="Home" type="text/x-handlebars-template">
+	
+	
+	 <div class="_5login-div">
+    <div class="w-form _5forloginpage">
+      <form id="loginemployeefrm" name="wf-form-login-form" data-name="login form" class="loginform">
+        <h6 class="section-title _5loginpage-title">Log In</h6>
+        <input id="username" type="email" placeholder="Email" name="email" data-name="email" autofocus="autofocus" class="w-input textfield login homepage _5loginpage-field">
+        <input id="password" type="password" placeholder="Password" data-name="Password 11" name="password-11" class="w-input textfield login homepage _5loginpage-field">
+        <input type="submit" value="Login" class="w-button button login _5loginpage-button">
+      </form>
   
-  {{#count}}
-            <div class="chef-orders-details-div">
-            <h1 class="ordersinqeue">Orders in Queue:</h1>
-            <h1 id="count" class="ordersinqeue">{{count}}</h1>
-          </div>
-  
-  {{/count}}
-    <div class="location-section">
-    <a href="#" data-ix="driver-map-cancel" class="w-inline-block orderpop-cancel for-driver-page"><img src="images/cancel.png">
-    </a>
-      <div class="w-embed getmylocationmap" >
-      <div id="map" style="  width: 100%; height: 100%;" ></div>
-      <p id="demo"></p>
-       </div>
-  </div>
-  
-  
-  
-
-
-</script>  
-</head>
-<body class="_5body">
-<a id="notificationblue" style="display: none" data-ix="notification-bar-2"></a>
-	<a id="notificationred" style="display: none" data-ix="notification-bar"></a>
-	 <div id="errorCode" class="notification-div">
-  </div>
-  <div id="successCode" class="notification-div-2">
-
-  </div>
-
-  <div class="w-section _4section">
-    <a href="#" class="w-inline-block logout-div"><img width="118" src="images/log out.png" class="logout-image">
-      <h6 class="logout-text">Log out</h6>
-    </a>
-    <div data-duration-in="300" data-duration-out="100" class="w-tabs">
-      <div class="w-tab-menu _4tab-menu">
-        <a data-w-tab="Orders" data-ix="tab-bounce" class="w-tab-link w--current w-inline-block _4tab-link">
-          <div class="_4tab-text">Orders Queue</div><img src="images/arrow down blue.png" data-ix="arrloca
-          ow-pic" class="_4tab-image"><img src="images/ordersicon.png" class="_4tab-icon">
-        </a>
-      </div>
-      <div class="w-tab-content _4tab-content">
-        <div data-w-tab="Orders" class="w-tab-pane w--tab-active _4tab-pan1 for-chef-pane">
-          <div id="allorder" class="_6orders-div">
-<!------------------------------------------------------------------------------------------------------->
-
-
-<!--
-vip code	
--->
-
-
-<!-------------------------------------------------------------------------------------------------------->
-
-          </div>
-
-        </div>
-      </div>
     </div>
   </div>
-<div id="scripts">
-  <script src="js/jQuery.2.1.js"></script>
-    <script type="text/javascript" src="js/modernizr.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script> 
- </div>
- <script src="js/maping.js"></script>
-  <script src="js/handlebars-v4.0.5.js"></script>
-   <script src="js/app.js"></script>  
+
+
+</script>
+
+
+</head>
+<body class="_5body">
+			<div id="htmlWrapper">
+			
+		</div>
+ 
+    <script src="./js/handlebars-v4.0.5.js"></script> 
+  <script src="./js/jQuery.2.1.js"></script>
+  <script>
+  	
+  	(function(){
+   
+
+    var htmlContainer = $("#htmlWrapper");
+
+    checkReply = function(data) {
+        if (typeof(data.status) != "undefined") {
+           
+            alert(data.message);
+            return false;
+        } else {
+            return true;
+        }
+    };
+    server = {
+        url:"http://sbta.in/websites/oroms/service/",
+            request: function(options) {
+                return $.post(server.url+"index.php", options).promise();
+            },
+            debug: function(options) {
+                return $.post(server.url+"debug.php", options).promise();
+            }
+
+       
+       };
+
+				var isemployee  = localStorage.getItem("isemployee");
+
+				var login  = localStorage.getItem("login");
+				console.log(login)
+				if(login=="true"){
+	 
+					switch(isemployee){
+						
+						case '1':
+						    window.location.assign("http://sbta.in/websites/oroms/manager/index.php")
+						break;
+						case '2':
+						alert(isemployee)
+						break;
+						case '3':
+						alert(isemployee)
+						    window.location.assign("http://sbta.in/websites/oroms/chef/chef.html")
+
+						break;
+						case '4':
+						alert(isemployee)
+						    window.location.assign("http://sbta.in/websites/oroms/driver/driver.html")
+
+						break;
+					}
+	
+				}else{
+					
+					 var source   = $("#Home").html();
+   			var template = Handlebars.compile(source);
+   			var html  = template();
+  			htmlContainer.html(html); 
+				}
+
+             
+  			
+         $("#loginemployeefrm").on("submit", function( event ){
+            event.preventDefault();
+
+            var username  = $("#username").val(),
+                password  = $("#password").val();
+
+             server.request({route:{app:"login",username:username,password:password}})
+             .then( function( data ){
+                //check if data does not contain any error response
+                if(checkReply( data )){
+					console.log(data);
+                   login = true;
+				localStorage.setItem("login",true);
+				localStorage.setItem("loginID",data.LID);
+								localStorage.setItem("isemployee",data.grp_id);
+								var isemployee = localStorage.getItem("isemployee");
+				var lid  = localStorage.getItem("loginID");
+
+	 
+					switch(isemployee){
+						
+						case '1':
+												    window.location.assign("http://sbta.in/websites/oroms/manager/index.php");
+
+						break;
+						case '2':
+						alert(isemployee)
+						break;
+						case '3':
+						alert(isemployee)
+						    window.location.assign("http://sbta.in/websites/oroms/chef/chef.html")
+
+						break;
+						case '4':
+                             window.location="./driver.html";
+						alert(isemployee);
+						break;
+					}
+	
+				
+
+
+
+                }
+
+             },
+
+             //callback failed
+             function(){
+                console.log("Server Request Failed.. debug login");
+
+             }
+
+             );
+
+
+        }); 
+          
+          
+$("body").delegate("#logout-text","click", function(){
+	localStorage.setItem("login",false);
+	localStorage.removeItem("loginID");
+	localStorage.removeItem("isemployee");
+
+	location.reload();
+});
+    
+})();
+
+  	
+  </script>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="js/webflow.js"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
+
 </html>
+
+
+
